@@ -29,6 +29,7 @@ public class ApplicationMain {
         ConfigurableApplicationContext app = SpringApplication.run(ApplicationMain.class, args);
         MixDepend mixDepend = (MixDepend) app.getBean("executor");
         LOG.info(mixDepend.getValue("alasdair"));
+        LOG.info(mixDepend.getValue("lesley"));
     }
 
 }

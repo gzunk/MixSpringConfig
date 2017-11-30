@@ -13,11 +13,10 @@
             </value>
         </entry>
         <entry key="lesley">
-            <value><![CDATA[
+            <value>
                 select count * from fred where
-                surround < ?
+                surround &gt; ?
                 order by fusco;
-                ]]>
             </value>
         </entry>
     </util:map>

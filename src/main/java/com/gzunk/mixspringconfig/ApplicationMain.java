@@ -1,5 +1,8 @@
 package com.gzunk.mixspringconfig;
 
+import java.util.Map;
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -8,25 +11,42 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 
-import javax.annotation.Resource;
-import java.util.Map;
 
+/**
+ * Main application.
+ */
 @SpringBootApplication
 @ImportResource({"classpath:/beans.xml"})
 public class ApplicationMain {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ApplicationMain.class);
+    /**
+     * Logger.
+     */
+    private static final Logger LOG = LoggerFactory.getLogger(
+            ApplicationMain.class);
 
-    @Resource(name="queries")
-    Map<String, String> myMap;
+    /**
+     * Map to take data from.
+     */
+    @Resource(name = "queries")
+    private Map<String, String> myMap;
 
-    @Bean(name="executor")
-    MixDepend mixDepend() {
+    /**
+     * Bean to execute.
+     * @return the instance of the bean.
+     */
+    @Bean(name = "executor")
+    protected MixDepend mixDepend() {
         return new MixDepend(myMap);
     }
 
-    public static void main(String[] args) {
-        ConfigurableApplicationContext app = SpringApplication.run(ApplicationMain.class, args);
+    /**
+     * Application entry point.
+     * @param args command line arguments.
+     */
+    public static void main(final String[] args) {
+        ConfigurableApplicationContext app = SpringApplication.run(
+                ApplicationMain.class, args);
         MixDepend mixDepend = (MixDepend) app.getBean("executor");
         LOG.info(mixDepend.getValue("alasdair"));
         LOG.info(mixDepend.getValue("lesley"));

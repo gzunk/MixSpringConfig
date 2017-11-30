@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MixSpringConfig.iml" filepath="$PROJECT_DIR$/.idea/modules/MixSpringConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MixSpringConfig_main.iml" filepath="$PROJECT_DIR$/.idea/modules/MixSpringConfig_main.iml" group="MixSpringConfig" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MixSpringConfig_test.iml" filepath="$PROJECT_DIR$/.idea/modules/MixSpringConfig_test.iml" group="MixSpringConfig" />
+    </modules>
+  </component>
+</project>

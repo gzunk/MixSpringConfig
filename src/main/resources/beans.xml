@@ -12,6 +12,14 @@
                 ]]>
             </value>
         </entry>
+        <entry key="lesley">
+            <value><![CDATA[
+                select count * from fred where
+                surround < ?
+                order by fusco;
+                ]]>
+            </value>
+        </entry>
     </util:map>
 
 </beans>
